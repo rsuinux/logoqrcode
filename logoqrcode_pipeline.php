@@ -34,6 +34,6 @@ function creation_qrcode(){
  */
 function LOGO_ARTICLE($id){
 
-	return;
+	return $id;
 }
 ?>

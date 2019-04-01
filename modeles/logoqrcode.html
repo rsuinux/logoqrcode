@@ -1,0 +1,5 @@
+#SET{size, (#ENV{taille}|sinon{#CONFIG{'logoqrcode/taille'}}|sinon{1})}
+#SET{ecc, (#CONFIG{'logoqrcode/ecc'}|sinon{'L'})}
+#SET{rub, (#CONFIG{'logoqrcode/rub'}|sinon{'0'})}
+#SET{art, (#CONFIG{'logoqrcode/art'}|sinon{'1'})}
+[(#ENV{texte}|logoqrcode{#GET{size},#CONFIG{'logoqrcode/ecc'}})]  
