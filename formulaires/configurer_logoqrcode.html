@@ -6,7 +6,6 @@
 	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
 
 	[(#ENV{editable})
-	<input type="hidden" name="_meta_table" value="meta_logoqrcode" />
 	<form method="post" action="#ENV{action}">
 	<div>
 	<ul>
@@ -14,17 +13,17 @@
                         <label for="taille"><:logoqrcode:label_taille:></label>
                         <p class="explication"><:logoqrcode:explication_taille_aide:></p>
                         <select name="taille" id="taille">
-                                <option value=""[(#ENV{lire_config('/meta_logoqrcode/taille');}|=={''}|?{' selected'})]><:logoqrcode:option_non_configure:></option>
-                                <option value="1"[(#ENV{lire_config('/meta_logoqrcode/taille');}|=={1}|?{' selected'})]>1 pixel</option>
-                                <option value="2"[(#ENV{lire_config('/meta_logoqrcode/taille');}|=={2}|?{' selected'})]>2 pixels</option>
-				<option value="3"[(#ENV{lire_config('/meta_logoqrcode/taille');}|=={3}|?{' selected'})]>3 pixels</option>
-                                <option value="4"[(#ENV{lire_config('/meta_logoqrcode/taille');}|=={4}|?{' selected'})]>4 pixels</option>
-                                <option value="5"[(#ENV{lire_config('/meta_logoqrcode/taille');}|=={5}|?{' selected'})]>5 pixels</option>  
-                                <option value="6"[(#ENV{lire_config('/meta_logoqrcode/taille');}|=={6}|?{' selected'})]>6 pixels</option>  
-                                <option value="7"[(#ENV{lire_config('/meta_logoqrcode/taille');}|=={7}|?{' selected'})]>7 pixels</option>
-                                <option value="8"[(#ENV{lire_config('/meta_logoqrcode/taille');}|=={8}|?{' selected'})]>8 pixels</option>
-                                <option value="9"[(#ENV{lire_config('/meta_logoqrcode/taille');}|=={9}|?{' selected'})]>9 pixels</option>
-                                <option value="10"[(#ENV{lire_config('/meta_logoqrcode/taille');}|=={10}|?{' selected'})]>10 pixels</option>
+                                <option value=""[(#ENV{taille}|=={''}|?{' selected'})]><:logoqrcode:option_non_configure:></option>
+                                <option value="1"[(#ENV{taille}|=={1}|?{' selected'})]>1 pixel</option>
+                                <option value="2"[(#ENV{taille}|=={2}|?{' selected'})]>2 pixels</option>
+				<option value="3"[(#ENV{taille}|=={3}|?{' selected'})]>3 pixels</option>
+                                <option value="4"[(#ENV{taille}|=={4}|?{' selected'})]>4 pixels</option>
+                                <option value="5"[(#ENV{taille}|=={5}|?{' selected'})]>5 pixels</option>  
+                                <option value="6"[(#ENV{taille}|=={6}|?{' selected'})]>6 pixels</option>  
+                                <option value="7"[(#ENV{taille}|=={7}|?{' selected'})]>7 pixels</option>
+                                <option value="8"[(#ENV{taille}|=={8}|?{' selected'})]>8 pixels</option>
+                                <option value="9"[(#ENV{taille}|=={9}|?{' selected'})]>9 pixels</option>
+                                <option value="10"[(#ENV{taille}|=={10}|?{' selected'})]>10 pixels</option>
                         </select>
                 </li>
 		<br/>
@@ -32,24 +31,24 @@
                         <label for="ecc"><:logoqrcode:label_ecc:></label>
                         <p class="explication"><:logoqrcode:explication_ecc_aide:></p>
                         <select name="ecc" id="eec">
-                                <option value=""[(#ENV{lire_config('/meta_logoqrcode/ecc');}|=={''}|?{' selected'})]><:logoqrcode:option_non_configure:></option>
-                                <option value="L"[(#ENV{lire_config('/meta_logoqrcode/ecc');}|=={'L'}|?{' selected'})]>&nbsp;7%</option>
-                                <option value="M"[(#ENV{lire_config('/meta_logoqrcode/ecc');}|=={'M'}|?{' selected'})]>15%</option>
-                                <option value="Q"[(#ENV{lire_config('/meta_logoqrcode/ecc');}|=={'Q'}|?{' selected'})]>25%</option>
-                                <option value="H"[(#ENV{lire_config('/meta_logoqrcode/ecc');}|=={'H'}|?{' selected'})]>30%</option>
+                                <option value=""[(#ENV{ecc}|=={''}|?{' selected'})]><:logoqrcode:option_non_configure:></option>
+                                <option value="L"[(#ENV{ecc}|=={'L'}|?{' selected'})]>&nbsp;7%</option>
+                                <option value="M"[(#ENV{ecc}|=={'M'}|?{' selected'})]>15%</option>
+                                <option value="Q"[(#ENV{ecc}|=={'Q'}|?{' selected'})]>25%</option>
+                                <option value="H"[(#ENV{ecc}|=={'H'}|?{' selected'})]>30%</option>
                         </select>
                 </li>
 		<br/>
 		<li class="logo_rubrique">
                         <div class="choix">
-                                <input type="checkbox" name="rubriques" id="rubriques" class="checkbox"[(#ENV{lire_config('/meta_logoqrcode/logo_rubriques');}|?{' checked'})]/>
+                                <input type="checkbox" name="rubriques" id="rubriques" class="checkbox"[(#ENV{rub}|?{' checked'})]/>
                                 <label for="rubriques"><:logoqrcode:logoqrcode_rubriques:></label>
                         </div>
                 </li>
 		<br/>
 		<li class="logo_articles">
                         <div class="choix">
-                                <input type="checkbox" name="articles" id="articles" class="checkbox"[(#ENV{lire_config('/meta_logoqrcode/logo_articles');}|?{' checked'})]/>
+                                <input type="checkbox" name="articles" id="articles" class="checkbox"[(#ENV{art}|?{' checked'})]/>
                                 <label for="articles"><:logoqrcode:logoqrcode_articles:></label>
                         </div>
                 </li>
@@ -61,9 +60,5 @@
 		</p>
 	</div>
 </form>
-ecrire_config('/meta_logoqrcode/taille', 'taille');
-ecrire_config('/meta_logoqrcode/ecc', 'ecc');
-ecrire_config('/meta_logoqrcode/logo_rubriques', 'rubriques');
-ecrire_config('/meta_logoqrcode/logo_articles', 'articles');
 ]
 </div>
