@@ -11,7 +11,7 @@
 	if (isset($_GET['data']))
 		$data = $_GET['data'] ;
 
-	$filename = qrcode_getpng($data, $matrixPointSize, $errorCorrectionLevel) ;
+	$filename = logoqrcode_getpng($data, $matrixPointSize, $errorCorrectionLevel) ;
 	readfile($filename) ;
 
 ?>
