@@ -1,11 +1,10 @@
-<div class="formulaire_spip formulaire_configurer formulaire_#FORM formulaire_#FORM-#ENV{id,nouveau}">
+<div class="formulaire_spip formulaire_configurer formulaire_#FORM">
 
 	<h3 class="titrem"><:logoqrcode:cfg_titre_parametrages:></h3>
 
 	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
 	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
 
-	[(#ENV{editable})
 	<form method="post" action="#ENV{action}">
 	<div>
 	<ul>
@@ -60,5 +59,4 @@
 		</p>
 	</div>
 </form>
-]
 </div>

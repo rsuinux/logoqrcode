@@ -6,11 +6,15 @@
     */
    
 // Sécurité
-f (!defined('_ECRIRE_INC_VERSION')) { return; }                                                                                                                                                                                                
+if (!defined('_ECRIRE_INC_VERSION')) { return; }                                                                                                                                                                                                
 if ( !is_dir( _DIR_VAR."logoqrcode_cache/" ) ) {
 	if ( !mkdir ( _DIR_VAR."logoqrcode/", 0777 ) ) {
-		spip_log( "impossible decreer le repertoire", qrcode" );
+		spip_log( "impossible decreer le repertoire", "qrcode" );
 	}
+}
+
+function logoqrcode_hash($texte, $taile, $ecc) {
+	return mdr(serialize(array($texte, $taille, $ecc)));
 }
 
 function logoqrcode_getpng($texte, $taille, $ecc) {
