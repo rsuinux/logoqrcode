@@ -15,3 +15,8 @@ $id_rubrique = "#ID_RUBRIQUE";
 #URL_ARTICLE{#ID_ARTICLE} affichera l’url de l’article d’id #ID_ARTICLE => sans l'url complète du site (nom de domaine...)
 pareil avec #ID_RUBRIQUE
 
+#URL_SITE_SPIP => adresse du site SANS le '/' final
+
+En résumé, pour faire un qrcode de l'adresse de la page, il faudra faire:
+  #URL_SITE_SPIP"/"#URL_ARTIVCLE(#ID_ARTICLE)
+
