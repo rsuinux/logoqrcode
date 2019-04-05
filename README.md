@@ -9,5 +9,13 @@ Comment utiliser ce Plugin:
 
 Ensuite, si vous en êtes à activer des plugins dans spip, vous devriez pouvoir trouver l'interface de configuration.
 
+******************************************************
+
+Pour info:
+ - dans le plugin, les qrcode seront dans ~/local/logoqrcode_cachhe/
+ - chaque logo aura le numero de l'article ou de la rubrique
+
+******************************************************
+
 Author: Rémi Suinot <remi at suinot dot org>
 (c) 2018/2019
