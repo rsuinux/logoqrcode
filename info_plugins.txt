@@ -1,1 +1,17 @@
 https://www.spip.net/fr_article5414.html
+
+$id_article = "#ID_ARTICLE";
+
+// si le fichier n'existe pas, on le crée:
+if (!file_exists($file_out)) {
+  // appel à la fonction de création du logo
+} else {
+  // on récupere l'image et on envoi les data
+}
+
+$id_rubrique = "#ID_RUBRIQUE";
+// on fait pareil pareil pour les rubriques
+
+#URL_ARTICLE{#ID_ARTICLE} affichera l’url de l’article d’id #ID_ARTICLE => sans l'url complète du site (nom de domaine...)
+pareil avec #ID_RUBRIQUE
+
