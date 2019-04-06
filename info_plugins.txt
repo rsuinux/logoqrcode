@@ -18,5 +18,7 @@ pareil avec #ID_RUBRIQUE
 #URL_SITE_SPIP => adresse du site SANS le '/' final
 
 En résumé, pour faire un qrcode de l'adresse de la page, il faudra faire:
-  #URL_SITE_SPIP"/"#URL_ARTIVCLE(#ID_ARTICLE)
+  #URL_SITE_SPIP"/"#URL_ARTICLE(#ID_ARTICLE)
+ou
+  #URL_SITE_SPIP"/"#URL_RUBRIQUE(#ID_RUBRIQUE)
 
