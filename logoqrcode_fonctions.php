@@ -1,6 +1,6 @@
 <?php
    /**
-    * @copyright  2018
+    * @copyright  2019
     * @author     rsuinux Remi Suinot <remi@suinot.org>
     * @licence    GNU/GPL
     */

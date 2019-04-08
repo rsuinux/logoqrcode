@@ -17,8 +17,11 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 
 /**
  * création du qrcode en fonction des parametres de l'administrateur.
- * le nom dépend du numero de l'article/rubrique
- * @param adresse article/rubrique
+ * le nom de l'image dépend du numero de l'article/rubrique
+ * => composition du nom "article_<id article>.png
+ * => composition du nom "rubrique_<id rubrique>.png
+ *
+ * @param adresse article/rubrique id_article/id_rubrique
  * @return adresse image
  */
 
@@ -32,8 +35,18 @@ function creation_qrcode(){
  * $id adresse de l'article
  * @return adresse de l'image
  */
-function LOGO_ARTICLE($id){
+$data = pipeline('LOGO_RUBRIQUE',array(
+	'args'=>array(
+		'id_rubrique'=>$id_rubrique
+	),
+	'data'=>"contenu au demarrage"
+));
 
-	return $id;
-}
+$data = pipeline('LOGO_article',array(
+	'args'=>array(
+		'id_article'=>$id_article
+	),
+	'data'=>"contenu au demarrage"
+));
+
 ?>
