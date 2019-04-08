@@ -35,18 +35,5 @@ function creation_qrcode(){
  * $id adresse de l'article
  * @return adresse de l'image
  */
-$data = pipeline('LOGO_RUBRIQUE',array(
-	'args'=>array(
-		'id_rubrique'=>$id_rubrique
-	),
-	'data'=>"contenu au demarrage"
-));
-
-$data = pipeline('LOGO_article',array(
-	'args'=>array(
-		'id_article'=>$id_article
-	),
-	'data'=>"contenu au demarrage"
-));
 
 ?>
