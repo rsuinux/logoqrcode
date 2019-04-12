@@ -1,6 +1,6 @@
 <?php
    /**
-    * @copyright  2018
+    * @copyright  2019
     * @author     rsuinux Remi Suinot <remi@suinot.org>
     * @licence    GNU/GPL
     */
@@ -8,8 +8,8 @@
 // Sécurité
 if (!defined('_ECRIRE_INC_VERSION')) { return; }                                                                                                                                                                                                
 if ( !is_dir( _DIR_VAR."logoqrcode_cache/" ) ) {
-	if ( !mkdir ( _DIR_VAR."logoqrcode/", 0777 ) ) {
-		spip_log( "impossible decreer le repertoire", "qrcode" );
+	if ( !mkdir ( _DIR_VAR."logoqrcode_cache/", 0777 ) ) {
+		spip_log( "impossible decreer le repertoire", "logoqrcode_cache" );
 	}
 }
 
