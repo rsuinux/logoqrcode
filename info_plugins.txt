@@ -1,1 +1,6 @@
 https://www.spip.net/fr_article5414.html
+
+récupération de l'adresse de l'article: 
+ <url>(#LOGO_SITE_SPIP|image_reduire{144,400}|extraire_attribut{src}|url_absolue|texte_backend)</url> 
+
+A étudier...
