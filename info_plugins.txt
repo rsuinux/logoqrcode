@@ -1,5 +1,11 @@
 https://www.spip.net/fr_article5414.html
 
+<<<<<<< HEAD
+récupération de l'adresse de l'article: 
+ <url>(#LOGO_SITE_SPIP|image_reduire{144,400}|extraire_attribut{src}|url_absolue|texte_backend)</url> 
+
+A étudier...
+=======
 $id_article = "#ID_ARTICLE";
 
 // si le fichier n'existe pas, on le crée:
@@ -22,3 +28,4 @@ En résumé, pour faire un qrcode de l'adresse de la page, il faudra faire:
 ou
   #URL_SITE_SPIP"/"#URL_RUBRIQUE(#ID_RUBRIQUE)
 
+>>>>>>> d79d5258779fc1beb7ed3db50b9439f85dce22c4
