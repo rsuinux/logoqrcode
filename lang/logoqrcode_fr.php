@@ -27,6 +27,9 @@ permettent de récuperer des informations, dont des URL, sans avoir à les saisi
 	'explication_ecc_aide' => 'Ce pourcentage indique combien d\'erreurs peuvent être récupérées en cas de difficulté de lecture du QRcode.',
 	'explication_taille_aide' => 'Chaque élément du QRcode fera la taille spécifiée.',
 
+	// F
+	'formulaire_prive_titre' => 'QrCode',
+
 	// L
 	'label_ecc' => 'Correction d\'erreurs :',
 	'label_taille' => 'Taille :',
