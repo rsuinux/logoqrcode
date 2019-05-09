@@ -26,6 +26,9 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  */
 
 function creation_qrcode(){
+	// On commence par récupérer l'id article ou rubrique :
+	$id_article = $GLOBALS['id_article'];
+	$id_rubrique = $GLOBALS['id_rubrique'];
 	return;
 }
 
