@@ -11,6 +11,6 @@
 	<auteur lien="https://www.suinot.org">Rémi Suinot</auteur>
         <licence lien="http://www.gnu.org/licenses/gpl-3.0.html">GPL 3</licence>
 	<traduire module="logoqrcode" reference="fr" gestionnaire="salvatore" />
-	
+	<pipeline nom="logoqrcode" inclure="logoqucode_pipelines.php" />	
 	<menu nom="configurer_logoqrcode" titre="logoqrcode:titre_page_configurer_logoqrcode" parent="menu_configuration" icone="images/logo-qrcode-16.png" />
 </paquet>
