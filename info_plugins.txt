@@ -1,22 +1,29 @@
 https://www.spip.net/fr_article5414.html
 
+Adresse des logo article rubrique:
+Sources: https://contrib.spip.net/Lister-les-logos-4600
+Rappel
+
+Pour le moment (les versions de SPIP 3.1 et inférieures), la gestion des logos ne se fait pas en base de données mais par des fichiers images enregistrés à la racine du répertoire IMG/ de votre site.
+La convention de nommage de ces fichiers est la suivante :
+
+    nom de l’objet. exemples : art pour article, aut pour auteur, message pour message, depot pour dépôt, etc.
+    état du logo : "on" ou "off" ;
+    identifiant de l’objet associé au logo ;
+    extension du fichier, généralement "jpg" ou "png" ou "gif".
+
+Quand on parle d’état d’un logo, nous avons 2 valeurs possibles :
+
+    Logo normal, qui correspond à "on" dans le nom du fichier du logo ;
+    Logo de survol, qui correspond à "off" dans le nom du fichier.
+exemple sur spip de test: 
+~$ ls /var/www/html/IMG/
+arton1.jpg  distant  rubon0.jpg  rubon1.jpg
+
+
 <<<<<<< HEAD
 récupération de l'adresse de l'article: 
  <url>(#LOGO_SITE_SPIP|image_reduire{144,400}|extraire_attribut{src}|url_absolue|texte_backend)</url> 
-
-A étudier...
-=======
-$id_article = "#ID_ARTICLE";
-
-// si le fichier n'existe pas, on le crée:
-if (!file_exists($file_out)) {
-  // appel à la fonction de création du logo
-} else {
-  // on récupere l'image et on envoi les data
-}
-
-$id_rubrique = "#ID_RUBRIQUE";
-// on fait pareil pareil pour les rubriques
 
 #URL_ARTICLE{#ID_ARTICLE} affichera l’url de l’article d’id #ID_ARTICLE => sans l'url complète du site (nom de domaine...)
 pareil avec #ID_RUBRIQUE
@@ -29,3 +36,29 @@ ou
   #URL_SITE_SPIP"/"#URL_RUBRIQUE(#ID_RUBRIQUE)
 
 >>>>>>> d79d5258779fc1beb7ed3db50b9439f85dce22c4
+Sources: http://www.crazyws.fr/dev/applis-et-scripts/generer-des-qr-codes-en-php-RVWZ9.html
+utilisation de la librairie phpqrcode:
+- Le premier paramètre spécifie le texte ou les données qui seront encodées dans l'image et est passée comme une chaîne normale.
+
+- Le deuxième paramètre est le nom du fichier de sortie pour l'image générée (ici PNG). La valeur par défaut est un booléen à false et dans ce cas l'image est envoyée directement au navigateur sinon enregistrée au même endroit où se trouve le script.
+
+- Le troisième paramètre est le niveau de correction d'erreur pour le QR Code généré, transmis sous forme d'un caractère. Il détermine la quantité de données par codewords (8 bits par codewords) qui peut être restaurée pour une image QR Code déformée ou endommagée à l'aide de l'algorithme de Reed-Solomon de correction d'erreur. Si le niveau de correction est haut alors la quantité de données dans le QR Code sera moindre suivant aussi la dimension donnée. Voici un tableau récapitulatif des niveaux liés au pourcentage de restauration avec les paramètres utilisés lors de l'appel de la méthode.
+
+Niveau		Pourcentage de	Constante sur 
+		restauration	PHP QR Code
+Bas		7%		L
+Moyen		15%		M
+Quartile	25%		Q
+Haut		30%		H
+
+- Le quatrième paramètre spécifie la taille de chacun des carrés de code du QR Code mesurée en pixels. Chaque carré de code (également appelé "pixels" ou "modules") est de 4*4px par défaut.
+
+- Le cinquième paramètre spécifie la limite de la marge blanche autour du QR Code mesurée en "modules". Par exemple un margin de 16px sur chaque côté pour 4*4px module par défaut.
+
+La bibliothèque prend en charge l'exportation en PNG, SVG et EPS, et vous pouvez produire des QR Codes dans un de ces formats en changeant simplement le nom de la méthode de png() pour svg() ou eps() et utiliser l'extension correcte pour l'image générée dans le nom de fichier.
+
+Vous pouvez aussi changer la couleur de fond et de premier plan en les passant en paramètres supplémentaires :
+œ
+$bgcolor = 0xCC0000;
+$fgcolor = 0x00CC00;
+QRcode::png("http://www.crazyws.fr/", "crazyws.png", "L", 4, 4, false, $bgcolor, $fgcolor);

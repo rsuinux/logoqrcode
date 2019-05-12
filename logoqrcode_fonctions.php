@@ -18,7 +18,8 @@ function logoqrcode_hash($texte, $taile, $ecc) {
 }
 
 function logoqrcode_getpng($texte, $taille, $ecc) {
-	$filename = _DIR_VAR."cache-qrcode/qrcode-".qrcode_hash($texte, $taille, $ecc).".png";
+	// le nom du fichier d'image:
+	$filename = _DIR_VAR."logoqrcode_cache/qrcode-".qrcode_hash($texte, $taille, $ecc).".png";
 	if (! file_exists($filename)) {
 		require_once(find_in_path('lib/phpqrcode.php')) ; 
 		$errorCorrectionLevel = 'L' ; 
@@ -36,8 +37,8 @@ function logoqrcode_getpng($texte, $taille, $ecc) {
 }
 
 function filtre_qrcode($texte,$taille=false,$ecc=false,$link=false) { 
-	$taille || ( $taille = lire_config('qrcode/taille') ) || ( $taille = 1 ) ; 
-	$ecc || ( $ecc = lire_config('qrcode/ecc') ) || ( $ecc = 'L' ) ;
+	$taille || ( $taille = lire_config('logoqrcode/taille') ) || ( $taille = 1 ) ; 
+	$ecc || ( $ecc = lire_config('logoqrcode/ecc') ) || ( $ecc = 'L' ) ;
 	$filename = qrcode_getpng($texte, $taille, $ecc) ;
 	$width = ' width="'.largeur($filename).'"';  
 	$height = ' height="'.hauteur($filename).'"';

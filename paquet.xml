@@ -10,7 +10,11 @@
 	<nom>Logo-qrcode</nom>
 	<auteur lien="https://www.suinot.org">Rémi Suinot</auteur>
         <licence lien="http://www.gnu.org/licenses/gpl-3.0.html">GPL 3</licence>
+	<!-- facilité pour les champs de formulaires -->
+        <necessite nom="saisies" compatibilite="[1.14.0;]" />
+        <necessite nom="yaml" compatibilite="[1.5.4;]" />
+
 	<traduire module="logoqrcode" reference="fr" gestionnaire="salvatore" />
-	<pipeline nom="logoqrcode" inclure="logoqucode_pipelines.php" />	
+	<pipeline nom="creation_qrcode" inclure="logoqucode_pipelines.php" />	
 	<menu nom="configurer_logoqrcode" titre="logoqrcode:titre_page_configurer_logoqrcode" parent="menu_configuration" icone="images/logo-qrcode-16.png" />
 </paquet>

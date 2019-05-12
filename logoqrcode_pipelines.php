@@ -26,22 +26,22 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 
 function creation_qrcode(){
 	// récupération de la configuration
-	$taille=lire_config('logoqrcode', taille);
-	$ecc=lire_config('logoqrcode', ecc);
+	$taille=lire_config('logoqrcode/taille');
+	$ecc=lire_config('logoqrcode/ecc');
 	//test => si on qrcode les article: ok, on fait
-	if ( lire_config('logoqrcode', art) {
+	if ( lire_config('logoqrcode/art') {
 		// On commence par récupérer l'id de l'article :
 		$uri_article = generer_url_article($GLOBALS['id_article']);
 		// on passe l'adresse à la fonction de création du png
-		logoqrcode_getpng ( $uri_rubrique, $taille, $ecc);
+		logoqrcode_getpng ( $id_article, $uri_article, $taille, $ecc);
 	} // fin test
 	
 	//test => si on qrcode les rubrique: ok, on fait 
-	if ( lire_config('logoqrcode', rub) {
+	if ( lire_config('logoqrcode/rub') {
 		// On commence par récupérer l'id de la rubrique :
 		$uri_rubrique = generer_url_rubrique($GLOBALS['id_rubrique']);
 		// on passe l'adresse à la fonction de création du png
-		logoqrcode_getpng ( $uri_rubrique, $taille, $ecc);
+		logoqrcode_getpng ( $id_rubrique , $uri_rubrique, $taille, $ecc);
 	]// fin test
 	
 	return;
