@@ -3,18 +3,17 @@
 	categorie="multimedia"
 	version="1.0.1"
 	etat="test"
-	logo="prive/themes/spip/images/logo-qrcode-64.png"
 	compatibilite="[3.2.1;3.2.*]"
-	documentation=""
+	logo="prive/themes/spip/images/logo-qrcode-64.png"
+	documentation="https://www.suinot.org/spip.php?article38"
 >
 	<nom>Logo-qrcode</nom>
 	<auteur lien="https://www.suinot.org">Rémi Suinot</auteur>
         <licence lien="http://www.gnu.org/licenses/gpl-3.0.html">GPL 3</licence>
-	<!-- facilité pour les champs de formulaires -->
-        <necessite nom="saisies" compatibilite="[1.14.0;]" />
-        <necessite nom="yaml" compatibilite="[1.5.4;]" />
-
 	<traduire module="logoqrcode" reference="fr" gestionnaire="salvatore" />
 	<pipeline nom="creation_qrcode" inclure="logoqucode_pipelines.php" />	
+        <necessite nom="saisies" compatibilite="[1.42.11;[" />
+        <necessite nom="yaml" compatibilite="[1.5.3;[" />
+        <necessite nom="api de vérification" compatibilite="[1.9.2;[" />
 	<menu nom="configurer_logoqrcode" titre="logoqrcode:titre_page_configurer_logoqrcode" parent="menu_configuration" icone="images/logo-qrcode-16.png" />
 </paquet>

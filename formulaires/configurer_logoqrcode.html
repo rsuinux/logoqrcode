@@ -5,20 +5,18 @@
 	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
 	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
 
-	[(#ENV{editable})
 	<form method='post' action='#ENV{action}'>
 	<div>
-		#ACTION_FORMULAIRE{#ENV{action}}
+		#ACTION_FORMULAIRE{#ENV{action}}[
 		<input type='hidden' name='logo_qrcode' value='logoqrcode' />
 		<ul>
-			#GENERER_SAISIES{#ENV{saisies_logoqrcode}}
+			(#GENERER_SAISIES{#ENV{saisies}})
 		</ul>
                 <!--extra-->
                 <p class="boutons">
                         <input type='submit' class='submit' value="<:bouton_enregistrer:>" />
-                </p>
+                </p>]
 	</div>
 	</form>
-	]
 </div>
 21	[(#ENV**{message_ok}|oui)]
