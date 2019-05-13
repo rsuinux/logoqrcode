@@ -1,6 +1,6 @@
 <?php
 if (!defined('_ECRIRE_INC_VERSION')) return;  // Sécurité
-    
+   //  https://zone.spip.net/trac/spip-zone/browser/spip-zone/_squelettes_/soyezcreateurs_net/trunk/plugins/soyezcreateurs/formulaires/configurer_soyezcreateurs.html?rev=114670
 function formulaires_logoqrcode_saisies() {
 
 	$saisies = array(
@@ -37,7 +37,7 @@ function formulaires_logoqrcode_saisies() {
 			)
 		),
 		array( // champ genre : oui/non
-			'saisie' => 'true_false',
+			'saisie' => 'radio',
 			'options' => array(
 				'nom' => 'rubrique',
 				'label' => _T('<:logoqrcode:logoqrcode_rubriques:>'),
@@ -45,7 +45,7 @@ function formulaires_logoqrcode_saisies() {
 			)
 		),
 		array( // champ genre : oui/non
-			'saisie' => 'true_false',
+			'saisie' => 'radio',
 			'options' => array(
 				'nom' => 'article',
 				'label' => _T('<:logoqrcode:logoqrcode_articles:>'),
