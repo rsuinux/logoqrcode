@@ -10,9 +10,7 @@
 		#ACTION_FORMULAIRE{#ENV{action}}
 		<input type='hidden' name='logo_qrcode' value='logoqrcode' />
 		<ul>
-			[(#EDITABLE)
-				#VOIR_SAISIES{#ENV{saisies}, #ENV}
-			]
+			#GENERER_SAISIES{#ENV{saisies}}
 		</ul>
                 <p class="boutons">
                         <input type='submit' class='submit' value="<:bouton_enregistrer:>" />

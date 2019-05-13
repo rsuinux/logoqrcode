@@ -2,6 +2,7 @@
 if (!defined('_ECRIRE_INC_VERSION')) return;  // Sécurité
     
 function formulaires_logoqrcode_saisies() {
+
 	$saisies = array(
 		array( 
 			'saisie' => 'fieldset',
@@ -54,7 +55,7 @@ function formulaires_logoqrcode_saisies() {
 	);
  
 	include_spip('inc/saisies');
-	$erreurs = saisies_verifier($saisies); // Et hop pour le verifier() de CVT !
+	$erreurs = saisies_verifier($saisies);
 	return $saisies;
 }
 ?>
