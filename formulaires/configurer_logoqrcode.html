@@ -7,16 +7,16 @@
 
 	<form method='post' action='#ENV{action}'>
 	<div>
-		#ACTION_FORMULAIRE{#ENV{action}}[
+		#ACTION_FORMULAIRE{#ENV{action}}
 		<input type='hidden' name='logo_qrcode' value='logoqrcode' />
 		<ul>
-			(#GENERER_SAISIES{#ENV{saisies}})
+			[(#EDITABLE)
+				#VOIR_SAISIES{#ENV{saisies}, #ENV}
+			]
 		</ul>
-                <!--extra-->
                 <p class="boutons">
                         <input type='submit' class='submit' value="<:bouton_enregistrer:>" />
-                </p>]
+                </p> 
 	</div>
 	</form>
 </div>
-21	[(#ENV**{message_ok}|oui)]

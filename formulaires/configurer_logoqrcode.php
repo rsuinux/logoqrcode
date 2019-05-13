@@ -10,7 +10,7 @@ function formulaires_logoqrcode_saisies() {
 				'label' => 'Pixel(s) ',
 				'datas' => array( 
 					'1 ' => '1 ',
-					'2 ' => '2 ',
+					'2 ' => '3 ',
 					'3 ' => '3 ',
 					'4 ' => '4 ',
 					'5 ' => '5 ',
@@ -52,7 +52,9 @@ function formulaires_logoqrcode_saisies() {
 			)
 		)
 	);
-
+ 
+	include_spip('inc/saisies');
+	$erreurs = saisies_verifier($saisies); // Et hop pour le verifier() de CVT !
 	return $saisies;
 }
 ?>
