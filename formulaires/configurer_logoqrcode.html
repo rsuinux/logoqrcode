@@ -7,11 +7,10 @@
 
 	 <form method="post" action="#ENV{action}">
 	<div>
-			#ACTION_FORMULAIRE{#ENV{action}}
 		<fieldset>
-			[(#SAISIE{liste,defaut,
-				label='Pixels',
-				explication='explication azerty',
+			[(#SAISIE{ radio, defaut,
+				label=<:logoqrcode:label_taille:>,
+				explication=<:logoqrcode:explication_taille_aide:>,
 				datas=#ARRAY{
 					1, ' 1 ',
 					2, ' 3 ',
@@ -27,11 +26,9 @@
 				defaut=4,
 				cacher_option_intro=oui}
 			)]
-		</fieldset>
-		<fieldset>
-			[(#SAISIE{radio,defaut,
-				label='ecc',
-				explication='explication qsdfgh',
+			[(#SAISIE{ radio, defaut,
+				label=<:logoqrcode:label_ecc:>,
+				explication=<:logoqrcode:explication_ecc_aide:>,
 				datas=#ARRAY{
 					L, 'L',
 					M, 'M',
@@ -41,20 +38,16 @@
 				default='L',
 				cacher_option_intro=oui}
 			)]
-		</fieldset>
-		<fieldset>
-			[(#SAISIE{case, defaut,
-				label='<:logoqrcode:logoqrcode_rubriques:>',
-				explication='explication wxcvbn',
+			[(#SAISIE{ case, defaut,
+				label=<:logoqrcode:label_rubriques:>,
+				explication=<:logoqrcode:explication_rubriques:>,
 				defaut=off}
 			)]
-		</fieldset>
-		<fieldset>
-			[(#SAISIE{case, defaut,
-				label='<:logoqrcode:logoqrcode_articles:>',
-				explication='explication 123654',
+			[(#SAISIE{ case, defaut,
+				label=<:logoqrcode:label_articles:>,
+				explication=<:logogqrcode:explication_articles:>,
 				defaut=on}
-				)]
+			)]
 		</fieldset>
                 <p class="boutons">
                         <input type='submit' class='submit' value="<:bouton_enregistrer:>" />
