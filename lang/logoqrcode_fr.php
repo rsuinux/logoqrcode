@@ -24,14 +24,18 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 permettent de récuperer des informations, dont des URL, sans avoir à les saisir manuellement.',
 
 	// E
+	'explication_articles' => 'Faut il calculer et afficher les QrCode pour chaque rubrique?',
 	'explication_ecc_aide' => 'Ce pourcentage indique combien d\'erreurs peuvent être récupérées en cas de difficulté de lecture du QRcode.',
 	'explication_taille_aide' => 'Chaque élément du QRcode fera la taille spécifiée.',
+	'explication_rubriques' => 'Faut il calculer et afficher les QrCode pour chaque article?',
 
 	// F
 	'formulaire_prive_titre' => 'QrCode',
 
 	// L
+	'label_articles' => 'QrCode sur articles :',
 	'label_ecc' => 'Correction d\'erreurs :',
+	'label_rubriques' => 'QrCode sur rubriques :',
 	'label_taille' => 'Taille :',
 
 	// O
