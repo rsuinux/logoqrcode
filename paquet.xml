@@ -13,6 +13,7 @@
 	<traduire module="logoqrcode" reference="fr" gestionnaire="salvatore" />
 	<pipeline nom="creation_qrcode" inclure="logoqucode_pipelines.php" />	
         <necessite nom="saisies" compatibilite="[1.42.11;[" />
+        <necessite nom="saisie_liste" compatibilite="[1.4.14;[" />
         <necessite nom="yaml" compatibilite="[1.5.3;[" />
         <necessite nom="verifier" compatibilite="[1.9.2;[" />
 	<menu nom="configurer_logoqrcode" titre="logoqrcode:titre_page_configurer_logoqrcode" parent="menu_configuration" icone="images/logo-qrcode-16.png" />

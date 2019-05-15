@@ -5,31 +5,57 @@
 	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
 	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
 
-	       <form method="post" action="#ENV{action}">
-               <div>
-		       <fieldset>
-                       #ACTION_FORMULAIRE{#ENV{action}}
-                                   [(#SAISIE{radio,defaut,
-	                               label='Pixels',
-	                               datas=#ARRAY{
-			                1, ' 1 ',
-                                        2, ' 3 ',
-                                        3, ' 3 ',
-                                        4, ' 4 ',
-                                        5, ' 5 ',
-                                        6, ' 6 ',
-                                        7, ' 7 ',
-                                        8, ' 8 ',
-                                        9, ' 9 ',
-                                        10, '10'
-                                  },
-	 defaut=4,
-               cacher_option_intro=oui}
-         )]</fieldset>
-              [(#SAISIE{case, defaut,
-              label='<:logoqrcode:logoqrcode_rubriques:>',
-            defaut=off}
-          )]
+	 <form method="post" action="#ENV{action}">
+	<div>
+			#ACTION_FORMULAIRE{#ENV{action}}
+		<fieldset>
+			[(#SAISIE{liste,defaut,
+				label='Pixels',
+				explication='explication azerty',
+				datas=#ARRAY{
+					1, ' 1 ',
+					2, ' 3 ',
+					3, ' 3 ',
+					4, ' 4 ',
+					5, ' 5 ',
+					6, ' 6 ',
+					7, ' 7 ',
+					8, ' 8 ',
+					9, ' 9 ',
+					10, '10'
+				},
+				defaut=4,
+				cacher_option_intro=oui}
+			)]
+		</fieldset>
+		<fieldset>
+			[(#SAISIE{radio,defaut,
+				label='ecc',
+				explication='explication qsdfgh',
+				datas=#ARRAY{
+					L, 'L',
+					M, 'M',
+					Q, 'Q',
+					H, 'H'
+				},
+				default='L',
+				cacher_option_intro=oui}
+			)]
+		</fieldset>
+		<fieldset>
+			[(#SAISIE{case, defaut,
+				label='<:logoqrcode:logoqrcode_rubriques:>',
+				explication='explication wxcvbn',
+				defaut=off}
+			)]
+		</fieldset>
+		<fieldset>
+			[(#SAISIE{case, defaut,
+				label='<:logoqrcode:logoqrcode_articles:>',
+				explication='explication 123654',
+				defaut=on}
+				)]
+		</fieldset>
                 <p class="boutons">
                         <input type='submit' class='submit' value="<:bouton_enregistrer:>" />
                 </p> 
