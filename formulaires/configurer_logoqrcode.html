@@ -12,16 +12,16 @@
 				label=<:logoqrcode:label_taille:>,
 				explication=<:logoqrcode:explication_taille_aide:>,
 				datas=#ARRAY{
-					1, ' 1 ',
-					2, ' 3 ',
-					3, ' 3 ',
-					4, ' 4 ',
-					5, ' 5 ',
-					6, ' 6 ',
-					7, ' 7 ',
-					8, ' 8 ',
-					9, ' 9 ',
-					10, '10'
+					1, ' 1 pixel  ',
+					2, ' 2 pixels ',
+					3, ' 3 pixels ',
+					4, ' 4 pixels ',
+					5, ' 5 pixels ',
+					6, ' 6 pixels ',
+					7, ' 7 pixels ',
+					8, ' 8 pixels ',
+					9, ' 9 pixels ',
+					10, '10 pixels'
 				},
 				defaut=4,
 				cacher_option_intro=oui}
@@ -30,10 +30,10 @@
 				label=<:logoqrcode:label_ecc:>,
 				explication=<:logoqrcode:explication_ecc_aide:>,
 				datas=#ARRAY{
-					L, 'L',
-					M, 'M',
-					Q, 'Q',
-					H, 'H'
+					L, <:logoqrcode:ecc_restauration_l:>,
+					M, <:logoqrcode:ecc_restauration_m:>,
+					Q, <:logoqrcode:ecc_restauration_q:>,
+					H, <:logoqrcode:ecc_restauration_h:> 
 				},
 				default='L',
 				cacher_option_intro=oui}
@@ -45,7 +45,7 @@
 			)]
 			[(#SAISIE{ case, defaut,
 				label=<:logoqrcode:label_articles:>,
-				explication=<:logogqrcode:explication_articles:>,
+				explication=<:logoqrcode:explication_articles:>,
 				defaut=on}
 			)]
 		</fieldset>

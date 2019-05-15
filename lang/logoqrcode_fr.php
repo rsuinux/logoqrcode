@@ -26,16 +26,20 @@ permettent de récuperer des informations, dont des URL, sans avoir à les saisi
 	// E
 	'explication_articles' => 'Faut il calculer et afficher les QrCode pour chaque rubrique?',
 	'explication_ecc_aide' => 'Ce pourcentage indique combien d\'erreurs peuvent être récupérées en cas de difficulté de lecture du QRcode.',
-	'explication_taille_aide' => 'Chaque élément du QRcode fera la taille spécifiée.',
+	'explication_taille_aide' => 'Taille de chacun des carré constituant le QrCode.',
 	'explication_rubriques' => 'Faut il calculer et afficher les QrCode pour chaque article?',
+	'ecc_restauration_l' => 'L (7% de restauration)',
+	'ecc_restauration_m' => 'M (15% de restauration)',
+	'ecc_restauration_q' => 'Q (25% de restauration)',
+	'ecc_restauration_h' => 'H (30% de restauration)',
 
 	// F
 	'formulaire_prive_titre' => 'QrCode',
 
 	// L
-	'label_articles' => 'QrCode sur articles :',
+	'label_articles' => 'QrCode sur article :',
 	'label_ecc' => 'Correction d\'erreurs :',
-	'label_rubriques' => 'QrCode sur rubriques :',
+	'label_rubriques' => 'QrCode sur rubrique :',
 	'label_taille' => 'Taille :',
 
 	// O
