@@ -5,10 +5,10 @@
 	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
 	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
 
-	 <form method="post" action="#ENV{action}">
+	<form method="post" action="#ENV{action}">
 	<div>
 		<fieldset>
-			[(#SAISIE{ radio, defaut,
+			[(#SAISIE{ radio, taille,
 				label=<:logoqrcode:label_taille:>,
 				explication=<:logoqrcode:explication_taille_aide:>,
 				datas=#ARRAY{
@@ -23,10 +23,11 @@
 					9, ' 9 pixels ',
 					10, '10 pixels'
 				},
-				defaut=4,
-				cacher_option_intro=oui}
+				defaut=4}
 			)]
-			[(#SAISIE{ radio, defaut,
+		<fieldset>
+		</fieldset>
+			[(#SAISIE{ radio, ecc,
 				label=<:logoqrcode:label_ecc:>,
 				explication=<:logoqrcode:explication_ecc_aide:>,
 				datas=#ARRAY{
@@ -35,15 +36,18 @@
 					Q, <:logoqrcode:ecc_restauration_q:>,
 					H, <:logoqrcode:ecc_restauration_h:> 
 				},
-				default='L',
-				cacher_option_intro=oui}
+				default='L'}
 			)]
-			[(#SAISIE{ case, defaut,
+		<fieldset>
+		</fieldset>
+			[(#SAISIE{ case, reb,
 				label=<:logoqrcode:label_rubriques:>,
 				explication=<:logoqrcode:explication_rubriques:>,
 				defaut=off}
 			)]
-			[(#SAISIE{ case, defaut,
+		<fieldset>
+		</fieldset>
+			[(#SAISIE{ case, art,
 				label=<:logoqrcode:label_articles:>,
 				explication=<:logoqrcode:explication_articles:>,
 				defaut=on}
