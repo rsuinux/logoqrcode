@@ -1,3 +1,14 @@
+gestion de la  base de données dans le plugin:
+https://programmer.spip.net/Le-fichier-_administrations-des-plugins
+
+
+test sur article ou rubrique:
+if ( $config['logoqrcode/rub'] == 'oui' ? 'true' : 'false')
+	les actions après
+if ( $config['logoqrcode/art'] == 'oui' ? 'true' : 'false')
+	les actions après
+
+
 https://www.spip.net/fr_article5414.html
 
 Adresse des logo article rubrique:

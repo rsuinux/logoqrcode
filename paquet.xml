@@ -2,6 +2,7 @@
 	prefix="logoqrcode"
 	categorie="multimedia"
 	version="1.0.1"
+	schema="1.0.0"
 	etat="test"
 	compatibilite="[3.2.1;3.2.*]"
 	logo="prive/themes/spip/images/logo-qrcode-64.png"
