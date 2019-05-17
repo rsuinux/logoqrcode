@@ -45,7 +45,7 @@ function logoqrcode_upgrade_metas(){
 	effacer_config('logoqrcode');
 
 	ecrire_config ('logoqrcode/taille' , $clefs['taille'] );
-	ecrire_config ('logoqrcode/eccr', $clefs['ecc'] );
+	ecrire_config ('logoqrcode/ecc', $clefs['ecc'] );
 	ecrire_config ('logoqrcode/rub', $clefs['rub'] );
 	ecrire_config ('logoqrcode/art', $clefs['art'] );
 	ecrire_config ('logoqrcode/marge', $clefs['marge'] );
@@ -64,5 +64,7 @@ function logoqrcode_vider_tables($nom_meta_base_version) {
 	// effacer les données du plugin (à utiliser plutot que effacer_meta() )
 	include_spip('inc/config');
 	effacer_config('logoqrcode');
+	effacer_config('logoqrcode_base_version');
 	effacer_meta("logoqrcode");
+	effacer_meta("logoqrcode_base_version");
 }
