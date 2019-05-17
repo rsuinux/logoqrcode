@@ -19,12 +19,15 @@ if (!defined('_ECRIRE_INC_VERSION')) { return; }
 function logoqrcode_upgrade($nom_meta_base_version,$version_cible){ 
 	$maj=array();
 	$maj['1.0.0']=array(
-		array( 'logoqrcode_upgrade_metas()',
+		array( 'logoqrcode_upgrade_metas')
 	);
+	include_spip('base/upgrade');
+	maj_plugin($nom_meta_base_version, $version_cible, $maj);
 }
 
 function logoqrcode_upgrade_metas(){ 
-	$clefs = array	{
+	include_spip('inc/config');
+	$clefs = array	(
 		'taille' =>  lire_config('logoqrcode/taille'),
 		'ecc' =>  lire_config('logoqrcode/ecc'),
 		'rub' =>  lire_config('logoqrcode/rub'),
@@ -32,7 +35,7 @@ function logoqrcode_upgrade_metas(){
 		'marge' =>  "4",
 		'arriere_plan' =>  "#9EEEEE",
 		'avant_plan' =>  "#522525"
-	};
+	);
 	effacer_config('logoqrcode/defaut');
 	effacer_config('logoqrcode/article');
 	effacer_config('logoqrcode/taille');
@@ -41,13 +44,13 @@ function logoqrcode_upgrade_metas(){
 	effacer_config('logoqrcode/art');
 	effacer_config('logoqrcode');
 
-	ecrire_config('logoqrcode/taille', $clefs('taille'));
-	ecrire_config('logoqrcode/ecc', $clefs('ecc'));
-	ecrire_config('logoqrcode/rub', $clefs('rub'));
-	ecrire_config('logoqrcode/art', $clefs('art'));
-	ecrire_config('logoqrcode/marge', $clefs('marge'));
-	ecrire_config('logoqrcode/arriere_plan', $clefs('arriere_plan'));
-	ecrire_config('logoqrcode/avant_plan', $clefs('avant_plan'));
+	ecrire_config ('logoqrcode/taille' , $clefs['taille'] );
+	ecrire_config ('logoqrcode/eccr', $clefs['ecc'] );
+	ecrire_config ('logoqrcode/rub', $clefs['rub'] );
+	ecrire_config ('logoqrcode/art', $clefs['art'] );
+	ecrire_config ('logoqrcode/marge', $clefs['marge'] );
+	ecrire_config ('logoqrcode/arriere_plan', $clefs['arriere_plan'] );
+	ecrire_config ('logoqrcode/avant_plan', $clefs['avant_plan'] );
 }
 
 /**
@@ -59,6 +62,7 @@ function logoqrcode_upgrade_metas(){
 
 function logoqrcode_vider_tables($nom_meta_base_version) {
 	// effacer les données du plugin (à utiliser plutot que effacer_meta() )
+	include_spip('inc/config');
 	effacer_config('logoqrcode');
 	effacer_meta("logoqrcode");
 }
