@@ -19,12 +19,11 @@ if (!defined('_ECRIRE_INC_VERSION')) { return; }
 function logoqrcode_upgrade($nom_meta_base_version,$version_cible){ 
 	$maj=array();
 	$maj['1.0.0']=array(
-		array( 'logoqrcode_upgrade_metas(),
+		array( 'logoqrcode_upgrade_metas()',
 	);
 }
 
 function logoqrcode_upgrade_metas(){ 
-	include_spip('lire_config');
 	$clefs = array	{
 		'taille' =>  lire_config('logoqrcode/taille'),
 		'ecc' =>  lire_config('logoqrcode/ecc'),
@@ -60,7 +59,6 @@ function logoqrcode_upgrade_metas(){
 
 function logoqrcode_vider_tables($nom_meta_base_version) {
 	// effacer les données du plugin (à utiliser plutot que effacer_meta() )
-	ww();
 	effacer_config('logoqrcode');
 	effacer_meta("logoqrcode");
 }
