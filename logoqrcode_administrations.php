@@ -18,6 +18,22 @@ if (!defined('_ECRIRE_INC_VERSION')) { return; }
 
 function logoqrcode_upgrade($nom_meta_base_version,$version_cible){ 
 	$maj=array();
+	        // Première installation
+        // Options de configuration
+        $maj['create'] = array(
+                array('ecrire_config', 'logoqrcode',
+                        array(
+				'taille' => '10',
+				'ecc' =>    'L',
+				'rub' =>    'off',
+				'art' =>    'on',
+				'marge' =>  '4',
+				'arriere_plan' =>  '#9EEEEE',
+				'avant_plan' =>  '#522525'
+                        )
+                )
+        );
+
 	$maj['1.0.0']=array(
 		array( 'logoqrcode_upgrade_metas')
 	);
@@ -32,16 +48,18 @@ function logoqrcode_upgrade_metas(){
 		'ecc' =>  lire_config('logoqrcode/ecc'),
 		'rub' =>  lire_config('logoqrcode/rub'),
 		'art' =>  lire_config('logoqrcode/art'),
-		'marge' =>  "4",
-		'arriere_plan' =>  "#9EEEEE",
-		'avant_plan' =>  "#522525"
+		'marge' =>  '4',
+		'arriere_plan' =>  '#9EEEEE',
+		'avant_plan' =>  '#522525'
 	);
-	effacer_config('logoqrcode/defaut');
 	effacer_config('logoqrcode/article');
 	effacer_config('logoqrcode/taille');
 	effacer_config('logoqrcode/ecc');
 	effacer_config('logoqrcode/rub');
 	effacer_config('logoqrcode/art');
+	effacer_config('logoqrcode/marge');
+	effacer_config('logoqrcode/arriere_plan');
+	effacer_config('logoqrcode/avant_plan');
 	effacer_config('logoqrcode');
 
 	ecrire_config ('logoqrcode/taille' , $clefs['taille'] );
@@ -63,6 +81,8 @@ function logoqrcode_upgrade_metas(){
 function logoqrcode_vider_tables($nom_meta_base_version) {
 	// effacer les données du plugin (à utiliser plutot que effacer_meta() )
 	include_spip('inc/config');
+	spip_log("vider les config",'testlog8');
+	effacer_meta($nom_meta_base_version);
 	effacer_config('logoqrcode');
 	effacer_config('logoqrcode_base_version');
 	effacer_meta("logoqrcode");

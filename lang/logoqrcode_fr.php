@@ -37,10 +37,10 @@ permettent de récuperer des informations, dont des URL, sans avoir à les saisi
 	'formulaire_prive_titre' => 'QrCode',
 
 	// L
-	'label_articles' => 'QrCode sur article :',
-	'label_ecc' => 'Correction d\'erreurs :',
-	'label_rubriques' => 'QrCode sur rubrique :',
-	'label_taille' => 'Taille :',
+	'label_articles' => 'QrCode sur article',
+	'label_ecc' => 'Correction d\'erreurs',
+	'label_rubriques' => 'QrCode sur rubrique',
+	'label_taille' => 'Taille',
 
 	// O
 	'option_non_configure' => 'Non configur&eacute;',
