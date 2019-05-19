@@ -69,6 +69,7 @@ function logoqrcode_upgrade_metas(){
 	ecrire_config ('logoqrcode/marge', $clefs['marge'] );
 	ecrire_config ('logoqrcode/arriere_plan', $clefs['arriere_plan'] );
 	ecrire_config ('logoqrcode/avant_plan', $clefs['avant_plan'] );
+	spip_log("nouvelle config",_LOG_DEBUG);
 }
 
 /**
@@ -81,7 +82,7 @@ function logoqrcode_upgrade_metas(){
 function logoqrcode_vider_tables($nom_meta_base_version) {
 	// effacer les données du plugin (à utiliser plutot que effacer_meta() )
 	include_spip('inc/config');
-	spip_log("vider les config",'testlog8');
+	spip_log("vider les config",_LOG_DEBUG);
 	effacer_meta($nom_meta_base_version);
 	effacer_config('logoqrcode');
 	effacer_config('logoqrcode_base_version');
