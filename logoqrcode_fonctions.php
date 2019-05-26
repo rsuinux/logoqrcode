@@ -40,13 +40,7 @@ function filtre_qrcode($texte,$taille=false,$ecc=false,$link=false) {
 	$taille || ( $taille = lire_config('logoqrcode/taille') ) || ( $taille = 1 ) ; 
 	$ecc || ( $ecc = lire_config('logoqrcode/ecc') ) || ( $ecc = 'L' ) ;
 	$filename = qrcode_getpng($texte, $taille, $ecc) ;
-	$width = ' width="'.largeur($filename).'"';  
-	$height = ' height="'.hauteur($filename).'"';
-	if ($link) {
-		return "<a href=\"$texte\" title=\""._T('logoqrcode:aide')."\"><img$class$style src=\"$filename\"$width$height alt=\"logoqrcode:$texte\"/></a>" ;
-	} else {
-		return "<img$class$style src=\"$filename\"$width$height alt=\"logoqrcode:$texte\" title=\""._T('logoqrcode:aide')."\"/>" ; 
-	}
+	return $filename;
 }
 
 ?>

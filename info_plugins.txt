@@ -33,7 +33,7 @@ arton1.jpg  distant  rubon0.jpg  rubon1.jpg
 
 
 <<<<<<< HEAD
-récupération de l'adresse de l'article: 
+récupération de l'adresse de l'article:    <= mais ca c'est dans le code html ! pas dans du php!!!
  <url>(#LOGO_SITE_SPIP|image_reduire{144,400}|extraire_attribut{src}|url_absolue|texte_backend)</url> 
 
 #URL_ARTICLE{#ID_ARTICLE} affichera l’url de l’article d’id #ID_ARTICLE => sans l'url complète du site (nom de domaine...)

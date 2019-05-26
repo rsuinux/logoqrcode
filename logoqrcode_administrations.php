@@ -18,7 +18,7 @@ if (!defined('_ECRIRE_INC_VERSION')) { return; }
 
 function logoqrcode_upgrade($nom_meta_base_version,$version_cible){ 
 	$maj=array();
-	        // Première installation
+	// Première installation
         // Options de configuration
         $maj['create'] = array(
                 array('ecrire_config', 'logoqrcode',
@@ -80,12 +80,13 @@ function logoqrcode_upgrade_metas(){
 **/
 
 function logoqrcode_vider_tables($nom_meta_base_version) {
-	// effacer les données du plugin (à utiliser plutot que effacer_meta() )
+	// effacer les données du plugin quand on efface le plugin conplètement.
 	include_spip('inc/config');
 
-	effacer_config($nom_meta_base_version);
-	if ( existe(lire_config('logoqrcode/taille')) )
-		effacer_config('logoqrcode/taille');
 	effacer_config('logoqrcode');
+	effacer_meta($nom_meta_base_version);
+	
 	lire_metas();
 }
+
+
