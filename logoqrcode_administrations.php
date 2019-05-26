@@ -82,9 +82,10 @@ function logoqrcode_upgrade_metas(){
 function logoqrcode_vider_tables($nom_meta_base_version) {
 	// effacer les données du plugin (à utiliser plutot que effacer_meta() )
 	include_spip('inc/config');
-        if (defined('_LOG_CS'))
-		cs_log("logoqrcode vider table : $nom_meta_base_version => $version_cible");
 
-	effacer_meta($nom_meta_base_version);
-	effacer_meta('logoqrcode');
+	effacer_config($nom_meta_base_version);
+	if ( existe(lire_config('logoqrcode/taille')) )
+		effacer_config('logoqrcode/taille');
+	effacer_config('logoqrcode');
+	lire_metas();
 }

@@ -9,7 +9,7 @@
 if (!defined('_ECRIRE_INC_VERSION')) { return; }                                                                                                                                                                                                
 if ( !is_dir( _DIR_VAR."logoqrcode_cache/" ) ) {
 	if ( !mkdir ( _DIR_VAR."logoqrcode_cache/", 0777 ) ) {
-		spip_log( "impossible decreer le repertoire", "logoqrcode_cache" );
+		spip_log( "impossible de creer le repertoire", "logoqrcode_cache" );
 	}
 }
 
