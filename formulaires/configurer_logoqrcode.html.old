@@ -27,8 +27,8 @@
 				},
 				defaut=4}
 			)]
-		</fieldset>
 		<fieldset>
+		</fieldset>
 			[(#SAISIE{ radio, ecc,
 				label=<:logoqrcode:label_ecc:>,
 				explication=<:logoqrcode:explication_ecc_aide:>,
