@@ -56,9 +56,11 @@
 			)]
 		</fieldset>
 		<fieldset>
+			<!-- @config:lireconfig('logoqrcode/reprise')@ permet de n'afficher cette partie que si la valeur est à off -->
 			[(#SAISIE{ case, reprise ,
 				label=<:logoqrcode:label_reprise:>,
 				explication=<:logoqrcode:explication_reprise:>,
+				afficher_si: '@config:logoqrcode:reprise@ == "off"',
 				defaut='off' }
 			)]
 		</fieldset>

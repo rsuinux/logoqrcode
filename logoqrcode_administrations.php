@@ -30,12 +30,17 @@ function logoqrcode_upgrade($nom_meta_base_version,$version_cible){
 				'marge' =>  '4',
 				'arriere_plan' =>  '#9EEEEE',
 				'avant_plan' =>  '#522525'
+				'reprise' =>    'off',
                         )
                 )
         );
 
 	$maj['1.0.0']=array(
 		array( 'logoqrcode_upgrade_metas')
+	);
+
+	$maj['1.0.1']=array(
+		array( 'logoqrcode_upgrade_deux')
 	);
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);
@@ -52,7 +57,33 @@ function logoqrcode_upgrade_metas(){
 		'arriere_plan' =>  '#9EEEEE',
 		'avant_plan' =>  '#522525'
 	);
-	effacer_config('logoqrcode/article');
+	effacer_config('logoqrcode/taille');
+	effacer_config('logoqrcode/ecc');
+	effacer_config('logoqrcode/rub');
+	effacer_config('logoqrcode/art');
+	effacer_config('logoqrcode');
+
+	ecrire_config ('logoqrcode/taille' , $clefs['taille'] );
+	ecrire_config ('logoqrcode/ecc', $clefs['ecc'] );
+	ecrire_config ('logoqrcode/rub', $clefs['rub'] );
+	ecrire_config ('logoqrcode/art', $clefs['art'] );
+	ecrire_config ('logoqrcode/marge', $clefs['marge'] );
+	ecrire_config ('logoqrcode/arriere_plan', $clefs['arriere_plan'] );
+	ecrire_config ('logoqrcode/avant_plan', $clefs['avant_plan'] );
+	spip_log("nouvelle config",_LOG_DEBUG);
+}
+
+function logoqrcode_upgrade_deux (){ 
+	include_spip('inc/config');
+	$clefs = array	(
+		'taille' =>  lire_config('logoqrcode/taille'),
+		'ecc' =>  lire_config('logoqrcode/ecc'),
+		'rub' =>  lire_config('logoqrcode/rub'),
+		'art' =>  lire_config('logoqrcode/art'),
+		'marge' =>  '4',
+		'arriere_plan' =>  '#9EEEEE',
+		'avant_plan' =>  '#522525'
+	);
 	effacer_config('logoqrcode/taille');
 	effacer_config('logoqrcode/ecc');
 	effacer_config('logoqrcode/rub');
@@ -69,9 +100,9 @@ function logoqrcode_upgrade_metas(){
 	ecrire_config ('logoqrcode/marge', $clefs['marge'] );
 	ecrire_config ('logoqrcode/arriere_plan', $clefs['arriere_plan'] );
 	ecrire_config ('logoqrcode/avant_plan', $clefs['avant_plan'] );
+	ecrire_config ('logoqrcode/reprise', 'off' );
 	spip_log("nouvelle config",_LOG_DEBUG);
 }
-
 /**
  *
  * @param string $nom_meta_base_version
