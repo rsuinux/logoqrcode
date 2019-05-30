@@ -4,68 +4,12 @@
 
 	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
 	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
-	<p>#URL_SITE_SPIP#URL_ARTICLE{2}</p>
-	<p>    [(#URL_PAGE|url_absolue)] </p>
-	<form method="post" action="#ENV{action}">
+	<form method='post' action='#ENV{action}'>
 	<div>
 		#ACTION_FORMULAIRE{ENV{action}}
-		<fieldset>
-			[(#SAISIE{ radio, taille,
-				label=<:logoqrcode:label_taille:>,
-				explication=<:logoqrcode:explication_taille_aide:>,
-				datas=#ARRAY{
-					1, ' 1 pixel  ',
-					2, ' 2 pixels ',
-					3, ' 3 pixels ',
-					4, ' 4 pixels ',
-					5, ' 5 pixels ',
-					6, ' 6 pixels ',
-					7, ' 7 pixels ',
-					8, ' 8 pixels ',
-					9, ' 9 pixels ',
-					10, '10 pixels'
-				},
-				defaut=4}
-			)]
-		</fieldset>
-		<fieldset>
-			[(#SAISIE{ radio, ecc,
-				label=<:logoqrcode:label_ecc:>,
-				explication=<:logoqrcode:explication_ecc_aide:>,
-				datas=#ARRAY{
-					L, <:logoqrcode:ecc_restauration_l:>,
-					M, <:logoqrcode:ecc_restauration_m:>,
-					Q, <:logoqrcode:ecc_restauration_q:>,
-					H, <:logoqrcode:ecc_restauration_h:> 
-				},
-				default='L'}
-			)]
-		<fieldset>
-		</fieldset>
-			[(#SAISIE{ case, rub,
-				label=<:logoqrcode:label_rubriques:>,
-				explication=<:logoqrcode:explication_rubriques:>,
-				defaut=lire_config('logoqrcode/rub') }
-			)]
-		<fieldset>
-		</fieldset>
-			[(#SAISIE{ case, art,
-				label=<:logoqrcode:label_articles:>,
-				explication=<:logoqrcode:explication_articles:>,
-				defaut=lire_config('logoqrcode/art') }
-			)]
-		</fieldset>
-		<fieldset>
-			<!-- @config:lireconfig('logoqrcode/reprise')@ permet de n'afficher cette partie que si la valeur est à off -->
-			[(#SAISIE{ case, reprise ,
-				label=<:logoqrcode:label_reprise:>,
-				explication=<:logoqrcode:explication_reprise:>,
-				afficher_si: '@config:logoqrcode:reprise@ == "off"',
-				defaut='off' }
-			)]
-		</fieldset>
+		#GENERER_SAISIES{#ENV{_saisies}}
                 <p class="boutons">
-                        <input type='submit' class='submit' value="<:bouton_enregistrer:>" />
+                        <input type='submit' class='submit' value='<:logoqrcode:bouton_enregistrer:>' />
                 </p> 
 	</div>
 	</form>

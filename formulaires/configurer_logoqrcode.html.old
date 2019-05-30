@@ -27,8 +27,8 @@
 				},
 				defaut=4}
 			)]
-		<fieldset>
 		</fieldset>
+		<fieldset>
 			[(#SAISIE{ radio, ecc,
 				label=<:logoqrcode:label_ecc:>,
 				explication=<:logoqrcode:explication_ecc_aide:>,
@@ -56,9 +56,11 @@
 			)]
 		</fieldset>
 		<fieldset>
+			<!-- @config:lireconfig('logoqrcode/reprise')@ permet de n'afficher cette partie que si la valeur est à off -->
 			[(#SAISIE{ case, reprise ,
 				label=<:logoqrcode:label_reprise:>,
 				explication=<:logoqrcode:explication_reprise:>,
+				afficher_si: '@config:logoqrcode:reprise@ == "off"',
 				defaut='off' }
 			)]
 		</fieldset>

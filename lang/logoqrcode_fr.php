@@ -15,6 +15,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	// B
 	'bouton_effacer' => 'Effacer',
+	'bouton_enregistrer' => 'Valider mes choix',
 
 	// C
 	'cfg_titre_parametrages' => 'Paramétrages des QrCodes et de leur utilisation',

@@ -29,8 +29,8 @@ function logoqrcode_upgrade($nom_meta_base_version,$version_cible){
 				'art' =>    'on',
 				'marge' =>  '4',
 				'arriere_plan' =>  '#9EEEEE',
-				'avant_plan' =>  '#522525'
-				'reprise' =>    'off',
+				'avant_plan' =>  '#522525',
+				'reprise' =>    'off'
                         )
                 )
         );
