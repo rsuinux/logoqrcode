@@ -6,8 +6,10 @@
 	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
 	<form method='post' action='#ENV{action}'>
 	<div>
-		#ACTION_FORMULAIRE{ENV{action}}
-		#GENERER_SAISIES{#ENV{_saisies}}
+		#ACTION_FORMULAIRE{#ENV{action}}
+
+                #GENERER_SAISIES{#ENV{_saisies}}
+
                 <p class="boutons">
                         <input type='submit' class='submit' value='<:logoqrcode:bouton_enregistrer:>' />
                 </p> 
