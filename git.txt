@@ -1,0 +1,1 @@
+https://git-scm.com/book/fr/v2/Utilitaires-Git-Stockage-des-identifiants#s_credential_caching

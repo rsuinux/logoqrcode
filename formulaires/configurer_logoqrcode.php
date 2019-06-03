@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * Création du tableau pour le formulaire de configuration du plugin
+ * logoqrcode
+ * R. Suinot <remi@suinot.org>
+ * 20/05/2019 
+ * 
+ * En sortie de fonction: array complètée avec toutes les données de configuration
+ *
+ */
 // Sécurité
 if (!defined('_ECRIRE_INC_VERSION')) { return; }
 
