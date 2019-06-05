@@ -16,7 +16,9 @@ function formulaire_logoqrcode_charger_dist(){
 	include_spip('inc/saisies');
 	include_spip('inc/config');
 
-	$saisies[]= array(
+	$saisies = array();
+
+	$taille = array(
 		'saisie' => 'radio',
 		'options' => array(
 			'nom' => 'taille',
@@ -38,7 +40,7 @@ function formulaire_logoqrcode_charger_dist(){
 		)
 	);
 	
-	$saisies[]= array(
+	$ecc = array(
 		'saisie' => 'radio',
 		'options' => array(
 			'nom' => 'ecc',
@@ -55,7 +57,7 @@ function formulaire_logoqrcode_charger_dist(){
 	);
 
 	$config_rub=lire_config('logoqrcode/rub');
-	$saisies[]= array(
+	$rub = array(
 		'saisie' => 'case',
 		'options' => array(
 	 		'nom' => 'rub',
@@ -66,7 +68,7 @@ function formulaire_logoqrcode_charger_dist(){
 	);
 
 	$config_art=lire_config('logoqrcode/art');
-	$saisies[]= array(
+	$art = array(
 		'saisie' => 'case',
 		'options' => array(
 	 		'nom' => 'art',
@@ -76,7 +78,7 @@ function formulaire_logoqrcode_charger_dist(){
 		)
 	);
 
-	$saisies[]= array(
+	$reprise = array(
 		'saisie' => 'case',
 		'options' => array(
 			'nom' => 'reprise',
@@ -86,7 +88,18 @@ function formulaire_logoqrcode_charger_dist(){
 		)
 	);
 
-	return array('_saisies' => $saisies);
+	$saisies['taille']=$taille;
+	$saisies['ecc']=$ecc;
+	$saisies['rub']=$rub;
+	$saisies['art']=$art;
+	$saisies['reprise']=$reprise;
+	verifier($taille, $ecc, $rub, $art, $reprise);
+	return $_saisies);
+}
+
+function verifier( $taille, $ecc, $rub, $art, $reprise ) {
+	if ( $taille, $ecc, $rub, $art, $reprise )) 
+		return array();
 }
 
 function logoqrcode_traiter_dist() {
