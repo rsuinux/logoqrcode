@@ -12,9 +12,9 @@
 // Sécurité
 if (!defined('_ECRIRE_INC_VERSION')) { return; }
 
-function formulaire_logoqrcode_charger_dist(){
-	include_spip('inc/saisies');
-	include_spip('inc/config');
+include_spip('inc/config');
+
+function formulaire_logoqrcode_charger(){
 
 	$saisies = array();
 
@@ -88,18 +88,12 @@ function formulaire_logoqrcode_charger_dist(){
 		)
 	);
 
-	$saisies['taille']=$taille;
-	$saisies['ecc']=$ecc;
+//	$saisies['taille']=$taille;
+//	$saisies['ecc']=$ecc;
 	$saisies['rub']=$rub;
-	$saisies['art']=$art;
-	$saisies['reprise']=$reprise;
-	verifier($taille, $ecc, $rub, $art, $reprise);
-	return $_saisies);
-}
-
-function verifier( $taille, $ecc, $rub, $art, $reprise ) {
-	if ( $taille, $ecc, $rub, $art, $reprise )) 
-		return array();
+//	$saisies['art']=$art;
+//	$saisies['reprise']=$reprise;
+	return $saisies;
 }
 
 function logoqrcode_traiter_dist() {
