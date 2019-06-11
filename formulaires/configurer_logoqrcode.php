@@ -14,9 +14,7 @@ if (!defined('_ECRIRE_INC_VERSION')) { return; }
 
 include_spip('inc/config');
 
-function formulaire_logoqrcode_charger(){
-
-	$saisies = array();
+function formulaire_configurer_logoqrcode_charger_dist(){
 
 	$taille = array(
 		'saisie' => 'radio',
@@ -88,13 +86,21 @@ function formulaire_logoqrcode_charger(){
 		)
 	);
 
-//	$saisies['taille']=$taille;
-//	$saisies['ecc']=$ecc;
-	$saisies['rub']=$rub;
-//	$saisies['art']=$art;
-//	$saisies['reprise']=$reprise;
+	$saisies = array(
+		'taille' => $taille,
+		'ecc' => $ecc,
+		'rub' => $rub,
+		'art' => $art,
+		'reprise' => $reprise
+		);
+
 	return $saisies;
 }
+
+function formulaire_configurer_logoqrcode_verifier_dist(){
+	return array();
+}
+
 
 function logoqrcode_traiter_dist() {
 	include_spip('logoqrcode_fonctions');
