@@ -16,91 +16,43 @@ include_spip('inc/config');
 
 function formulaire_configurer_logoqrcode_charger_dist(){
 
-	$taille = array(
-		'saisie' => 'radio',
-		'options' => array(
-			'nom' => 'taille',
-			'label' => _T('logoqrcode:label_taille'),
-			'explication' => _T('logoqrcode:explication_taille_aide'),
-			'datas' => array(
-				'1' => ' 1 pixel',
-				'2' => ' 2 pixels ',
-				'3' => ' 3 pixels ',
-				'4' => ' 4 pixels ',
-				'5' => ' 5 pixels ',
-				'6' => ' 6 pixels ',
-				'7' => ' 7 pixels ',
-				'8' => ' 8 pixels ',
-				'9' => ' 9 pixels ',
-				'10' => '10 pixels'
-			),
-			'defaut' => '4',
-		)
-	);
-	
-	$ecc = array(
-		'saisie' => 'radio',
-		'options' => array(
-			'nom' => 'ecc',
-			'label' => -T('logoqrcode:label_ecc'),
-			'explication' => _T('logoqrcode:explication_ecc_aide'),
-			'datas' => array(
-				'L' => _T('logoqrcode:ecc_restauration_l'),
-				'M' => _T('logoqrcode:ecc_restauration_m'),
-				'Q' => _T('logoqrcode:ecc_restauration_q'),
-				'H' => _T('logoqrcode:ecc_restauration_h') 
-			),
-			'defaut' => 'L',
-		)
-	);
-
 	$config_rub=lire_config('logoqrcode/rub');
-	$rub = array(
-		'saisie' => 'case',
-		'options' => array(
-	 		'nom' => 'rub',
-			'label' => _T('logoqrcode:label_rubriques'),
-			'explication' => _T('logoqrcode:explication_rubriques'),
-			'defaut' => $config_rub
-		)
-	);
-
-	$config_art=lire_config('logoqrcode/art');
-	$art = array(
-		'saisie' => 'case',
-		'options' => array(
-	 		'nom' => 'art',
-			'label' => _T('logoqrcode:label_articles'),
-			'explication' => _T('logoqrcode:explication_articles'),
-			'defaut' => $config_art
-		)
-	);
-
-	$reprise = array(
-		'saisie' => 'case',
-		'options' => array(
-			'nom' => 'reprise',
-			'label' => _T('logoqrcode:label_reprise'),
-			'explication' => _T('logoqrcode:explication_reprise'),
-			'defaut' => 'off'
-		)
-	);
 
 	$saisies = array(
-		'taille' => $taille,
-		'ecc' => $ecc,
-		'rub' => $rub,
-		'art' => $art,
-		'reprise' => $reprise
-		);
+		array(
+			'saisie' => 'fieldset',
+			'options' => array(
+				'non' => "test",
+				'label' => 'azerty',
+				'pliable' => 'non'
+			),
+			'saisies' => array(
+				array(
+					'saisie' => 'hiddem',
+					'options' => array(
+						'nom' => 'test'
+					)
+				),
+				array(
+					'saisie' => 'case',
+					'options' => array(
+				 		'nom' => 'rub',
+						'label' => _T('logoqrcode:label_rubriques'),
+						'explication' => _T('logoqrcode:explication_rubriques'),
+						'defaut' => $config_rub
+					)
+				),
+			),
+		),
+	);
+
 
 	return $saisies;
 }
 
 function formulaire_configurer_logoqrcode_verifier_dist(){
-	return array();
+		return array();
 }
-
 
 function logoqrcode_traiter_dist() {
 	include_spip('logoqrcode_fonctions');
