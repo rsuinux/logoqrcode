@@ -14,40 +14,36 @@ if (!defined('_ECRIRE_INC_VERSION')) { return; }
 
 include_spip('inc/config');
 
-function formulaire_configurer_logoqrcode_charger_dist(){
+function formulaires_configurer_logoqrcode_charger_dist(){
 
 	$config_rub=lire_config('logoqrcode/rub');
+	$config_art=lire_config('logoqrcode/art');
 
-	$saisies = array(
-		array(
-			'saisie' => 'fieldset',
-			'options' => array(
-				'non' => "test",
-				'label' => 'azerty',
-				'pliable' => 'non'
-			),
-			'saisies' => array(
-				array(
-					'saisie' => 'hiddem',
-					'options' => array(
-						'nom' => 'test'
-					)
-				),
-				array(
-					'saisie' => 'case',
-					'options' => array(
-				 		'nom' => 'rub',
-						'label' => _T('logoqrcode:label_rubriques'),
-						'explication' => _T('logoqrcode:explication_rubriques'),
-						'defaut' => $config_rub
-					)
-				),
-			),
+	$rubrique = array(
+		'saisie' => 'case',
+		'options' => array(
+			'nom' => 'rub',
+			'label' => _T('logoqrcode:label_rubriques'),
+			'explication' => _T('logoqrcode:explication_rubriques'),
 		),
+		'defaut' => $config_rub
+	);
+	$article = array(
+		'saisie' => 'case',
+		'options' => array(
+			'nom' => 'art',
+			'label' => _T('logoqrcode:label_articles'),
+			'explication' => _T('logoqrcode:explication_articles'), 
+		),
+		'defaut' => $config_art
 	);
 
+	$valeurs = array(
+		'rub' => $rubrique,
+		'art' => $article
+	);
 
-	return $saisies;
+		return $valeurs;
 }
 
 function formulaire_configurer_logoqrcode_verifier_dist(){
